@@ -1,156 +1,157 @@
 Ölçü 1:
-Re,
-Si,
-La,
-Sol,
-Re,
-Re,
+Re,1/2
+Si,1/2
+La,1/2
+Sol,1/2
+Re,1
+Re,1/2
 
 Ölçü 2:
-Re,
-Si,
-La,
-Sol,
-Mi,
-Mi,
+Re,1/2
+Si,1/2
+La,1/2
+Sol,1/2
+Mi,1
+Mi,1/2
 
 Ölçü 3:
-Mi,
-Do2,
-Si,
-La,
-Re2,
-Re2,
-Re2,
+Mi,1/2
+Do2,1/2
+Si,1/2
+La,1/2
+Re2,1/2
+Re2,1/2
+Re2,1
 
 Ölçü 4:
-Mi2,
-Re2,
-Do2,
-La,
-Si,
+Mi2,1/2
+Re2,1/2
+Do2,1/2
+La,1/2
+Si,2
 
 Ölçü 5:
-Mi2,
-Re2,
-Do2,
-La,
-Sol,
+Mi2,1/2
+Re2,1/2
+Do2,1/2
+La,1/2
+Sol,2
 
 Ölçü 6:
-Si,
-Si,
-Si,
-Si,
-Si,
-Si,
+Si,1/2
+Si,1/2
+Si,1
+Si,1/2
+Si,1/2
+Si,1
 
 Ölçü 7:
-Si,
-Re2,
-Sol,
-La,
-Si,
+Si,1/2
+Re2,1/2
+Sol,1/2
+La,1/4
+Si,2
 
 Ölçü 8:
-Do2,
-Do2,
-Do2,
-Do2,
-Si,
-Si,
-Si,
-Si,
+Do2,1/2
+Do2,1/2
+Do2,1/2
+Do2,1/4
+Si,1/2
+Si,1/2
+Si,1/2
+Si,1/4
 
 
 ölçü 9:
-Si,
-La,
-La,
-Si,
-La,
+Si,1/2
+La,1/2
+La,1/2
+Si,1/2
+La,2
 
 Ölçü 10:
-Re2,
-Re2,
-Do2,
-La,
-Sol,
+Re2,1/2
+Re2,1/2
+Do2,1/2
+La,1/2
+Sol,2
+
 Ölçü 11:
-Re,
-Si,
-La,
-Sol,
-Re,
-Re,
+Re,1/2
+Si,1/2
+La,1/2
+Sol,1/2
+Re,1
+Re,1/2
 
 Ölçü 12:
-Re,
-Si,
-La,
-Sol,
-Mi,
-Mi,
+Re,1/2
+Si,1/2
+La,1/2
+Sol,1/2
+Mi,1
+Mi,1/2
 
 Ölçü 13:
-Mi,
-Do2,
-Si,
-La,
-Re2,
-Re2,
-Re2,
+Mi,1/2
+Do2,1/2
+Si,1/2
+La,1/2
+Re2,1/2
+Re2,1/2
+Re2,1
 
 Ölçü 14:
-Mi2,
-Re2,
-Do2,
-La,
-Si,
+Mi2,1/2
+Re2,1/2
+Do2,1/2
+La,1/2
+Si,2
 
 Ölçü 15:
-Mi2,
-Re2,
-Do2,
-La,
-Sol,
+Mi2,1/2
+Re2,1/2
+Do2,1/2
+La,1/2
+Sol,2
 
 Ölçü 16:
-Si,
-Si,
-Si,
-Si,
-Si,
-Si,
+Si,1/2
+Si,1/2
+Si,1
+Si,1/2
+Si,1/2
+Si,1
 
 Ölçü 17:
-Si,
-Re2,
-Sol,
-La,
-Si,
+Si,1/2
+Re2,1/2
+Sol,1/2
+La,1/4
+Si,2
 
 Ölçü 18:
-Do2,
-Do2,
-Do2,
-Do2,
-Si,
-Si,
-Si,
-Si,
+Do2,1/2
+Do2,1/2
+Do2,1/2
+Do2,1/4
+Si,1/2
+Si,1/2
+Si,1/2
+Si,1/4
 
 
 ölçü 19:
-Si,
-La,
-La,
-Si,
-La,
+Si,1/2
+La,1/2
+La,1/2
+Si,1/2
+La,2
 
 Ölçü 20:
-Re2,
-Re2,
-Do2,
-La,
-Sol,
+Re2,1/2
+Re2,1/2
+Do2,1/2
+La,1/2
+Sol,2
