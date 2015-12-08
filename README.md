@@ -1,1 +1,4 @@
-# sinyal2015
+# Ad Soyad
+# Öğrenci numarası
+# Ders Adı
+# Proje : MATLAB ile sentezleme
