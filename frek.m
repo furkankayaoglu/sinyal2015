@@ -12,6 +12,7 @@ s10='G#';
 s11='A(La)';
 s12='Bb';
 s13='B(Si)';
+s14='Sus';
 if(strcmp(N,s2))
     D=1;
 end
@@ -47,6 +48,9 @@ if(strcmp(N,s12))
 end
 if(strcmp(N,s13))
     D=12;
+end
+if(strcmp(N,s14))
+    F=0;
 end
 if(D==1)
 F=16.35
@@ -64,70 +68,3 @@ else
         F=F*2;
     end
 end
-s=F;function [s] = frek(N,O)
-s1='N';
-s2='C(Do)';
-s3='C#';
-s4='D(Re)';
-s5='Eb';
-s6='E(Mi)';
-s7='F(Fa)';
-s8='F#';
-s9='G(Sol)';
-s10='G#';
-s11='A(La)';
-s12='Bb';
-s13='B(Si)';
-if(strcmp(N,s2))
-    D=1;
-end
-if(strcmp(N,s3))
-    D=2;
-end
-if(strcmp(N,s4))
-    D=3;
-end
-if(strcmp(N,s5))
-    D=4;
-end
-if(strcmp(N,s6))
-    D=5;
-end
-if(strcmp(N,s7))
-    D=6;
-end
-if(strcmp(N,s8))
-    D=7;
-end
-if(strcmp(N,s9))
-    D=8;
-end
-if(strcmp(N,s10))
-    D=9;
-end
-if(strcmp(N,s11))
-    D=10;
-end
-if(strcmp(N,s12))
-    D=11;
-end
-if(strcmp(N,s13))
-    D=12;
-end
-if(D==1)
-F=16.35
-else
-    F=16.35
-    for(j=1:D-1)
-        F=F*1.05944;
-    end
-end
-if(O==0) 
-F2=1;
-F=F*F2;
-else 
-    for(i=1:O)
-        F=F*2;
-    end
-end
-s=F;
