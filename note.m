@@ -1,13 +1,13 @@
 %%harmonik dizi tanimlamasi ve frekans orneklemesi
 function [xx,t]=note(ff,olcu) 
 fs=8192; %frekansin orneklenmesi
-harmo_x=0;
+harmonikx=0;
 harmonik={1,0.8,0.4,0.1}; %harmonik dizisi tanımlanması
 t=0:1/olcu:olcu-(1/fs); %t araliğinin hesaplanması.
 %%Her harmonik degeri icin uzerine toplayip ekleme
 for h=1:length(harmonik)%Her harmoniğin hesaplanması için kurduğum döngü
    xx=harmonik{h}*sin(2*pi*ff*t); %Harmonik hesaplama
-   harmo_x=harmo_x+x;% Her değer için toplayıp üzerine ekleme
+   harmonikx=harmonikx+x;% Her değer için toplayıp üzerine ekleme
 
 end
 %%sinyalin zarflanmasi
