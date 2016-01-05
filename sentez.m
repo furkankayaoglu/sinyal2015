@@ -1,26 +1,20 @@
-%% degiskenlerin tanimlanmasi
+fs=8192; %örnekleme frekansý
+duraklama=fs*(1/100); %duraklama deðerinin tanýmalnasý
+oktav_degeri=0;
+notalar={}; %notalar dizisi oluþturdum
+dosya=fopen('notalar.txt'); %notalar.txt dosyasýný okumak açar.
+[nota,oktav,olcu]=textread('notalar.txt','%s%d%s','delimiter',',')%notalar.txt deki deðerleri okur
+fclose(dosya);%dosyayý kapatýr.
 
-fs = 8192; %frekansin orneklemesi
-pause = fs * (1/100); %pause degeri
-octave_value = 0;
-notalar = {}; %notalar dizissi
-%% dosya okunmasi
-
-dosya = fopen('notalar.txt'); %notalar text dosyasinin acilmasi
-[nota , oktav , olcu] = textread('notalar.txt' , '%s%d%s' , 'delimiter' , ',') %txt deki deðerlerin okunmasi
-fclose( dosya ) ; %dosya kapatma
-	%%oktava degistirme degeri eklenmesi
-    for j = 1 : length ( oktav ) %txtdeki tum oktavlari gez
-        oktav ( j ) =oktav ( j ) + octave_value ; %eski oktava degistirme degerini ekle
+    for j=1:length(oktav) %txt ten çektiðimiz bütün oktavlar için.
+        oktav(j)=oktav(j)+oktav_degeri; %degistirme deðerini eski oktava ekle.
     end
-	%%frek ve note fonksiyonunun cagirilmasi
-	for i = 2:length(nota)
 
-ff=frek ( nota{i} , oktav(i) ) ; %alinan nota ve oktavlar icin frek fonksiyonunun cagirilmasi
-[xx,t] = note (ff , olcu{i} ) ; %note fonksiyonun çaðýrýlmasý
-	%%sesin calinmasi
-plot (t , ff , pause ) 
-plot (t , ff , echo , t , pause ) 
-sound ( echo )%sesi cal
 
-	end
+for i=2:length(nota)
+ff=frek(nota{i},oktav(i)); %Çektiðimiz  nota ve oktav deðerleri için frek fonksiyonun çaðýrýlmasý
+[xx,t]=note(ff,olcu{i}); %note fonksiyonun çaðýrýlmasý
+plot(t,ff,duraklama) 
+plot(t,ff,echo,t,duraklama) 
+sound(echo)%sesi çalmak için.
+end
