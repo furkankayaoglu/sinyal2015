@@ -1,25 +1,51 @@
-function ff=frek(nota,oktav)  
-notalar={'Do','Dod','Re','Mib','Mi','Fa','Fad','Sol','Sold','La','Sib','Si','Sus'}; %notaları dizi içine atadım.
-flag=16.35;  %do notasının 0.oktavdaki değerini atadım.
-if nargin<2 %argümanların sayısı 2 den küçük ise
-     oktav=4; %oktavı 4 e eşitle
-end
+function ff = frek(nota,oktav)
 
-       for i=1:length(notalar) %aldığımız nota ile dizinin içindeki hangi notanın eşit olduğunu anlamk için döngü kurdum.
-           
-              if strcmp(nota,notalar{i})%Alınan nota ve dizinin i. elemanı bir birine eşit ise
-                  ff=2^oktav*(2^((i-1)/12)*flag);%Frekansı hesapladım.
+%% frek fonksiyonu
 
-                  if strcmp(nota,notalar{13})%eğer değer Sus a eşit ise
-                      ff=0; %frekansı 0 a eşitledim.
-         
-              
+    %tüm notalari arraye koy
+    
+    notalar = {
+        'Do',
+        'Dod',
+        'Re',
+        'Mib',
+        'Mi',
+        'Fa',
+        'Fad',
+        'Sol',
+        'Sold',
+        'La',
+        'Sib',
+        'Si',
+        'Sus'
+    };
 
-           
-       end
-       
+    referans = 16.35;  %donun oktav = 0daki degeri
+
+    array_boyutu = length(notalar); %notalar arrayinin boyutunu al
+
+  
+ %% oktav yoksa
+ 
+    % oktav parametresi belirlenmemisse default ata
+    if ~exist('oktav','var') || isempty(oktav) 
+      oktav = 4;
     end
-     
-end
+    
+ %% notayý bul
+    for i = 1:array_boyutu %notalarý iterate ederek hangisine esit olduguna bak
 
-end
+        % stringcomparison = strcmp -> http://www.mathworks.com/help/matlab/ref/strcmp.html?requestedDomain=www.mathworks.com
+        % checks whether the 2 given strings are identical.
+
+        if strcmp(nota,notalar{i}) % verilen nota parametresi dizinin i.elemanýna esitmi (string comparison)
+            ff = 2^oktav*(2^((i-1)/12)*referans); % frekans formulu.
+
+        elseif strcmp(nota,notalar{13}) % eðer nota deðil de sus ise;
+            ff = 0; % frekansý 0 belirle.
+
+        end % if - end
+
+    end % for - end
+
+end % function - end

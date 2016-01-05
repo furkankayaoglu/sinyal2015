@@ -1,20 +1,55 @@
-fs=8192; %örnekleme frekansý
-duraklama=fs*(1/100); %duraklama deðerinin tanýmalnasý
-oktav_degeri=0;
-notalar={}; %notalar dizisi oluþturdum
-dosya=fopen('notalar.txt'); %notalar.txt dosyasýný okumak açar.
-[nota,oktav,olcu]=textread('notalar.txt','%s%d%s','delimiter',',')%notalar.txt deki deðerleri okur
-fclose(dosya);%dosyayý kapatýr.
+%% degiskenleri tanimla
 
-    for j=1:length(oktav) %txt ten çektiðimiz bütün oktavlar için.
-        oktav(j)=oktav(j)+oktav_degeri; %degistirme deðerini eski oktava ekle.
+    Fs = 3192;
+    gecikme = round(Fs/10);
+    duraklama = zeros(1,round(Fs/100));
+
+   % array initialize
+    notalar = [];
+    duraklama = [];
+%% oktav degis degeri
+
+    oktdegis=3;
+
+%% notalar.txt yi okuma
+
+    dosya = fopen('notalar.txt','r');
+    [nota,oktav,olcu] = textread('notalar.txt','%s%d%s','delimiter',',');
+    
+    fclose(dosya);
+    f = zeros(1,length(nota));
+    
+%% oktav degisebilir
+
+    if oktdegis~=0
+        for okt=1:length(oktav)
+            oktav(okt) = oktav(okt)+oktdegis; 
+        end
     end
 
+%% notalar matrisi olu?umu
 
-for i=2:length(nota)
-ff=frek(nota{i},oktav(i)); %Çektiðimiz  nota ve oktav deðerleri için frek fonksiyonun çaðýrýlmasý
-[xx,t]=note(ff,olcu{i}); %note fonksiyonun çaðýrýlmasý
-plot(t,ff,duraklama) 
-plot(t,ff,echo,t,duraklama) 
-sound(echo)%sesi çalmak için.
-end
+    for i = 1:length(nota)
+         % frek fonksiyonun outputunu frekans al.
+        f(i) = frek(nota{i},oktav(i));
+        
+        %note fonksiyonun output sinyali çizdi.
+        [sinwave,t] = note(f(i),str2num(olcu{i})); 
+        notalar = [notalar sinwave duraklama]; 
+    end
+    
+%% echo desteði
+    for j=1:length(notalar)
+        if (j+gecikme) < length(notalar)
+            notalar(j+gecikme) = notalar(j+gecikme) + 0.3*notalar(j); 
+        end
+    end
+%% normalize etme
+
+    notalar = notalar /max(abs(notalar));
+%% grafigi ciz
+
+    plot(notalar)
+%% ses olarak cikti
+
+    sound(notalar,Fs)
